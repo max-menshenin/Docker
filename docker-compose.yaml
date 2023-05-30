@@ -1,0 +1,11 @@
+services:
+  #nginx
+  web:
+    image: library/nginx:latest
+
+    ports:
+      - "80:80"
+
+  app:
+    Dockerfile:
+
