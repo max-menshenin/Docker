@@ -6,6 +6,3 @@ services:
     ports:
       - "80:80"
 
-  app:
-    Dockerfile:
-
