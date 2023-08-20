@@ -1,6 +1,4 @@
-# Replace '/Users/postmind/code' with your  source of html/php
-
-version: "3.9"
+version: "3.8"
 
 services:
   server:
@@ -18,8 +16,10 @@ services:
       context: ./dockerfiles
       dockerfile: php.dockerfile
     volumes:
-     - /Users/postmind/code:/var/www/html:delegated
+     - {WEB_SRC}:/var/www/html:delegated
      - ./src/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    env_file:
+     - variables.env
   mysql:
    platform: linux/x86_64 
    image: mysql:8
